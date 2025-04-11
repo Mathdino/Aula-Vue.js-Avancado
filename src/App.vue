@@ -38,7 +38,16 @@
       </keep-alive>
       <!--Modal-->
       <modal></modal>
-    </div>
+      <!--Router-->
+      <h1 @click="mostrarRouter">Logo</h1>
+      <nav class="aulaRouter">
+        <router-link to="/">Home</router-link>
+        <router-link to="/cursos">Cursos</router-link>
+        <router-link to="/acoes">Acoes</router-link>
+      </nav>
+      <transition mode="out-in">
+        <router-view></router-view>
+      </transition>
   </div>
 </template>
 
@@ -72,7 +81,28 @@ export default {
       menuAtivo: 'SobreEmpresa',
     };
   },
+  methods: {
+    mostrarRouter() {
+      console.log(this.$route);
+    },
+  },
 };
 </script>
 
-<style></style>
+<style>
+a {
+  padding: 10px;
+  color: #234;
+}
+
+.router-link-exact-active {
+  color: #4b8;
+  font-weight: bold;
+}
+
+.aulaRouter {
+  padding: 20px 0;
+  border: 4px solid #234;
+  margin: 20px;
+}
+</style>
