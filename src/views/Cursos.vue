@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>Curso ativo: {{curso}}</h1>
-    <router-link :to="{name: 'curso', params: { curso: 'javascript' }}">JavaScript</router-link>
+    <h1>Curso ativo: {{ curso }}</h1>
+    <router-link :to="{ name: 'curso', params: { curso: 'javascript' } }"
+      >JavaScript</router-link
+    >
     <router-link to="/cursos/html">HTML</router-link>
     <router-link to="/cursos/css">CSS</router-link>
 
@@ -13,9 +15,8 @@
 
 <script>
 export default {
-  props: ["curso"]
+  props: ['curso'],
 };
 </script>
 
-<style>
-</style>
+<style></style>
